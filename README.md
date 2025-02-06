@@ -29,3 +29,6 @@ The script begins by importing necessary libraries: `hashlib` for hashing, `os` 
 ### User Interaction
 
 The script is designed to be user-friendly. When executed, it prompts the user to enter the path of the file they wish to monitor. It checks if the specified file exists and begins the monitoring process. The user receives real-time feedback on whether the file has changed, along with the previous and current hash values.
+
+
+
