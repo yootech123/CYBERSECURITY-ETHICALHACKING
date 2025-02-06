@@ -1,4 +1,4 @@
-# CYBERSECURITY-ETHICALHACKING
+ \] # CYBERSECURITY-ETHICALHACKING
 
 **COMPANY**    :   CODTECH IT SOLUTIONS
 
@@ -12,23 +12,20 @@
 
 **TASK DESCRIPTION OF TASK1** 
 
-# File Integrity Monitoring Script: A Detailed Overview
+The provided Python script is a simple yet effective tool for monitoring file integrity by calculating and comparing hash values. File integrity checking is crucial in various applications, such as ensuring that configuration files remain unchanged, verifying the authenticity of downloaded files, and detecting unauthorized modifications to sensitive data. This script leverages the SHA-256 hashing algorithm, which is widely recognized for its security and reliability.
 
-# In the realm of cybersecurity, ensuring the integrity of files is paramount. The provided Python script serves as a basic file integrity monitoring tool, utilizing the SHA-256 hashing algorithm to detect changes in a specified file. This script is particularly useful for system administrators and security professionals who need to monitor critical files for unauthorized modifications, deletions, or corruptions.
-Key Components of the Script
+### Overview of the Script
 
-  #  Hash Calculation:
-    The script begins with the calculate_file_hash function, which computes the SHA-256 hash of a given file. This function opens the file in binary mode and reads it in chunks of 4096 bytes to efficiently handle large files. The use of SHA-256 ensures a high level of security, as it produces a unique hash value for each unique file content. If the file is not found or an error occurs during reading, the function gracefully handles exceptions and returns None.
+The script begins by importing necessary libraries: `hashlib` for hashing, `os` for file operations, and `time` for implementing delays in monitoring. The core functionality revolves around three main functions: `calculate_hash`, `save_hash`, and `load_hash`, along with the `monitor_file` function that orchestrates the monitoring process.
 
-   # Monitoring Functionality:
-    The monitor_file function is the core of the script. It initiates the monitoring process by calculating the initial hash of the specified file. The function then enters an infinite loop, where it periodically checks the file for changes based on a defined interval (defaulting to 5 seconds). This interval can be adjusted to suit the user’s needs, allowing for more or less frequent checks depending on the criticality of the file being monitored.
+1. **Calculating the Hash**: The `calculate_hash` function takes a file path as input and computes its SHA-256 hash. It reads the file in binary mode and processes it in chunks to handle large files efficiently. This approach minimizes memory usage, making the script suitable for files of varying sizes. The computed hash is returned as a hexadecimal string.
 
-     # Change Detection:
-    Within the loop, the script recalculates the file's hash and compares it to the previously stored hash. If a discrepancy is detected, the script alerts the user, indicating that the file has changed. It provides both the old and new hash values, allowing the user to understand the extent of the change. If no changes are detected, the script simply informs the user that the file remains unchanged.
+2. **Saving the Hash**: The `save_hash` function appends the file path and its corresponding hash value to a text file named `file_hashes.txt`. Each entry is formatted as `file_path:hash_value`, allowing for easy retrieval and comparison later. This simple text-based storage method avoids the complexity of structured data formats like JSON, making it straightforward to implement and understand.
 
-  #  User Interaction:
-    The script is designed to be user-friendly. It prints informative messages to the console, guiding the user through the monitoring process. This feedback is crucial for users who may not be familiar with the underlying mechanics of file integrity monitoring.
+3. **Loading the Hash**: The `load_hash` function reads the `file_hashes.txt` file to retrieve the stored hash for a given file path. It checks if the file exists and iterates through each line, splitting the stored data to find the hash corresponding to the specified file. If the file is not found or no hash exists, it returns `None`.
 
-Practical Applications
+4. **Monitoring the File**: The `monitor_file` function is the heart of the script. It first checks for an existing hash of the specified file. If no previous hash is found, it calculates the current hash and saves it. If a hash is found, it compares the current hash with the stored hash. If they differ, it indicates that the file has changed, and the new hash is saved. The function then enters a loop, continuously checking the file at specified intervals (defaulting to 10 seconds) for any changes.
 
-The practical applications of this script are numerous. Organizations can use it to monitor critical configuration files, sensitive documents, or any files that, if altered, could lead to security vulnerabilities or operational disruptions. For instance, system administrators can monitor system files to detect unauthorized changes that may indicate a security breach. Similarly, businesses can track changes to financial records or customer data to ensure compliance with regulations such as GDPR or HIPAA.
+### User Interaction
+
+The script is designed to be user-friendly. When executed, it prompts the user to enter the path of the file they wish to monitor. It checks if the specified file exists and begins the monitoring process. The user receives real-time feedback on whether the file has changed, along with the previous and current hash values.
