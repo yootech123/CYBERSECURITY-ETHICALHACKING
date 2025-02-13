@@ -46,14 +46,12 @@ Key Components
 
 # Libraries Used # 
 
-Requests:  "This library is used to make HTTP requests to the website".
+ (1) Requests:  "This library is used to make HTTP requests to the website".
 
 
-BeautifulSoup:   "This library helps parse HTML content, making it easier to extract information from web pages ".
+(2) BeautifulSoup:   "This library helps parse HTML content, making it easier to extract information from web pages ".
 
-SQL Injection Payloads: 
-
-			These are specially crafted strings that are used to test whether the website is vulnerable to SQL Injection. Examples include:
+SQL Injection Payloads:  "These are specially crafted strings that are used to test whether the website is vulnerable to SQL Injection. Examples include".
 
     xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']
 
