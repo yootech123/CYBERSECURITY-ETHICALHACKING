@@ -40,59 +40,69 @@ The script is designed to be user-friendly. When executed, it prompts the user t
 
 Web application vulnerabilities scanner
 
+
 This script is designed to scan a given website for two common types of web application vulnerabilities: SQL Injection (SQLi) and Cross-Site Scripting (XSS). It checks whether the website is susceptible to these attacks and reports back if any vulnerabilities are found.
 Key Components
 
- * Libraries Used:* 
+# Libraries Used # 
 
-        requests: This library is used to make HTTP requests to the website.
+Requests: 
+			This library is used to make HTTP requests to the website.
 
-        BeautifulSoup: This library helps parse HTML content, making it easier to extract information from web pages.
 
-    SQL Injection Payloads: These are specially crafted strings that are used to test whether the website is vulnerable to SQL Injection. Examples include:
+BeautifulSoup: 
+
+			This library helps parse HTML content, making it easier to extract information from web pages.
+
+SQL Injection Payloads: 
+
+			These are specially crafted strings that are used to test whether the website is vulnerable to SQL Injection. Examples include:
 
     xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']
+
+
 Functions
 
-* check_sql_injection(url, params) *
+# check_sql_injection(url, params) #
 
-        This function takes a URL and a list of parameters to test.
+This function takes a URL and a list of parameters to test.
+       
+It iterates over each parameter and each SQL injection payload, modifying the URL to include the payload.
 
-        It iterates over each parameter and each SQL injection payload, modifying the URL to include the payload.
+It then sends a request to the modified URL and checks the response for signs of SQL Injection vulnerability (like "error" or "warning" messages).
 
-        It then sends a request to the modified URL and checks the response for signs of SQL Injection vulnerability (like "error" or "warning" messages).
+If it detects a vulnerability, it prints a message and returns True.
 
-        If it detects a vulnerability, it prints a message and returns True.
+# check_xss(url, params) #
 
-* check_xss(url, params) *
+This function works similarly to the SQL injection checker but for XSS vulnerabilities.
 
-        This function works similarly to the SQL injection checker but for XSS vulnerabilities.
+It iterates over each parameter and each XSS payload, modifying the URL to include the payload.
 
-        It iterates over each parameter and each XSS payload, modifying the URL to include the payload.
+It sends a request to the modified URL and checks if the payload appears in the response.
 
-        It sends a request to the modified URL and checks if the payload appears in the response.
+If it detects a vulnerability, it prints a message and returns True.
 
-        If it detects a vulnerability, it prints a message and returns True.
+#  scan_url(url) #
 
-*  scan_url(url) *
+This function is the main scanning function.
 
-        This function is the main scanning function.
+It sends a request to the given URL and checks if the page can be fetched successfully.
 
-        It sends a request to the given URL and checks if the page can be fetched successfully.
+It then parses the HTML content using BeautifulSoup to find all forms on the page and extract the parameters.
 
-        It then parses the HTML content using BeautifulSoup to find all forms on the page and extract the parameters.
+It calls the SQL injection and XSS checking functions with the extracted parameters.
 
-        It calls the SQL injection and XSS checking functions with the extracted parameters.
+It prints whether any vulnerabilities were found.
 
-        It prints whether any vulnerabilities were found.
+# Main Function #
 
-* Main Function:*
+This part of the script prompts the user to enter a URL to scan.
 
-        This part of the script prompts the user to enter a URL to scan.
+It validates the URL to ensure it starts with "http://" or "https://".
 
-        It validates the URL to ensure it starts with "http://" or "https://".
+It calls the scan_url function to start the scanning process**
 
-        It calls the scan_url function to start the scanning process**
 
 
 # Output of Task 2
