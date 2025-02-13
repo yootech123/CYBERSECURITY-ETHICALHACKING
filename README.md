@@ -53,10 +53,10 @@ Key Components
 
 SQL Injection Payloads:  "These are specially crafted strings that are used to test whether the website is vulnerable to SQL Injection. Examples include".
 
-    xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']
+    >> xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']  <<
 
 
-Functions
+ # Functions #
 
 # check_sql_injection(url, params) #
 
