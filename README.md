@@ -36,6 +36,10 @@ The script is designed to be user-friendly. When executed, it prompts the user t
 ![Image](https://github.com/user-attachments/assets/7ffe8fc0-738c-48be-a6d3-4328a26f3e11)
 
 
+# Output of Task 2
+
+Web application vulnerabilities scanner
+
 This script is designed to scan a given website for two common types of web application vulnerabilities: SQL Injection (SQLi) and Cross-Site Scripting (XSS). It checks whether the website is susceptible to these attacks and reports back if any vulnerabilities are found.
 Key Components
 
