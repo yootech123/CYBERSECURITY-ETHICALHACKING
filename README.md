@@ -1,4 +1,4 @@
- \] # CYBERSECURITY-ETHICALHACKING
+  # CYBERSECURITY-ETHICALHACKING #
 
 **COMPANY**    :   CODTECH IT SOLUTIONS
 
@@ -22,7 +22,7 @@ The script begins by importing necessary libraries: `hashlib` for hashing, `os` 
 
 2. **Saving the Hash**: The `save_hash` function appends the file path and its corresponding hash value to a text file named `file_hashes.txt`. Each entry is formatted as `file_path:hash_value`, allowing for easy retrieval and comparison later. This simple text-based storage method avoids the complexity of structured data formats like JSON, making it straightforward to implement and understand.
 
-3. **Loading the Hash**: The `load_hash` function reads the `file_hashes.txt` file to retrieve the stored hash for a given file path. It checks if the file exists and iterates through each line, splitting the stored data to find the hash corresponding to the specified file. If the file is not found or no hash exists, it returns `None`.
+3. **Loading the Hash**: The `load_hash` function reads the `file_hashes.txt` file to retrieve the stored hash for a given file path. It checks if the file exists and iterates through each line, splitting the stored data to find the hash corresponding to the specified file. If the file is not found or no hash exists, it returns None.
 
 4. **Monitoring the File**: The `monitor_file` function is the heart of the script. It first checks for an existing hash of the specified file. If no previous hash is found, it calculates the current hash and saves it. If a hash is found, it compares the current hash with the stored hash. If they differ, it indicates that the file has changed, and the new hash is saved. The function then enters a loop, continuously checking the file at specified intervals (defaulting to 10 seconds) for any changes.
 
@@ -53,7 +53,7 @@ Key Components
 
 SQL Injection Payloads:  "These are specially crafted strings that are used to test whether the website is vulnerable to SQL Injection. Examples include".
 
-   # >> xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']  << #
+   # xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">','<svg/onload=alert(1)>'] #
 
 
  # Functions #
