@@ -38,7 +38,7 @@ The script is designed to be user-friendly. When executed, it prompts the user t
 
 # Output of Task 2
 
-Web application vulnerabilities scanner
+# Web application vulnerabilities scanner #
 
 
 This script is designed to scan a given website for two common types of web application vulnerabilities: SQL Injection (SQLi) and Cross-Site Scripting (XSS). It checks whether the website is susceptible to these attacks and reports back if any vulnerabilities are found.
@@ -53,7 +53,7 @@ Key Components
 
 SQL Injection Payloads:  "These are specially crafted strings that are used to test whether the website is vulnerable to SQL Injection. Examples include".
 
-    >> xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']  <<
+   # >> xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']  << #
 
 
  # Functions #
