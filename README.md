@@ -35,11 +35,11 @@ The script is designed to be user-friendly. When executed, it prompts the user t
 
 ![Image](https://github.com/user-attachments/assets/7ffe8fc0-738c-48be-a6d3-4328a26f3e11)
 
-# TASK DESCRIPTION OF TASK 2
-**This script is designed to scan a given website for two common types of web application vulnerabilities: SQL Injection (SQLi) and Cross-Site Scripting (XSS). It checks whether the website is susceptible to these attacks and reports back if any vulnerabilities are found.
+
+This script is designed to scan a given website for two common types of web application vulnerabilities: SQL Injection (SQLi) and Cross-Site Scripting (XSS). It checks whether the website is susceptible to these attacks and reports back if any vulnerabilities are found.
 Key Components
 
-    * Libraries Used:* 
+ * Libraries Used:* 
 
         requests: This library is used to make HTTP requests to the website.
 
@@ -50,7 +50,7 @@ Key Components
     xss_payloads = ['<script>alert(1)</script>', '<img src="x" onerror="alert(1)">', '<svg/onload=alert(1)>']
 Functions
 
-    check_sql_injection(url, params):
+* check_sql_injection(url, params) *
 
         This function takes a URL and a list of parameters to test.
 
@@ -60,7 +60,7 @@ Functions
 
         If it detects a vulnerability, it prints a message and returns True.
 
-    check_xss(url, params):
+* check_xss(url, params) *
 
         This function works similarly to the SQL injection checker but for XSS vulnerabilities.
 
@@ -70,7 +70,7 @@ Functions
 
         If it detects a vulnerability, it prints a message and returns True.
 
-    scan_url(url):
+*  scan_url(url) *
 
         This function is the main scanning function.
 
@@ -82,13 +82,14 @@ Functions
 
         It prints whether any vulnerabilities were found.
 
-    * Main Function:*
+* Main Function:*
 
         This part of the script prompts the user to enter a URL to scan.
 
         It validates the URL to ensure it starts with "http://" or "https://".
 
         It calls the scan_url function to start the scanning process**
+
 
 # Output of Task 2
 
