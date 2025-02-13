@@ -46,13 +46,10 @@ Key Components
 
 # Libraries Used # 
 
-Requests: 
-			This library is used to make HTTP requests to the website.
+Requests:  "This library is used to make HTTP requests to the website".
 
 
-BeautifulSoup: 
-
-			This library helps parse HTML content, making it easier to extract information from web pages.
+BeautifulSoup:   "This library helps parse HTML content, making it easier to extract information from web pages ".
 
 SQL Injection Payloads: 
 
